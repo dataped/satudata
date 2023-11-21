@@ -7,8 +7,8 @@ import (
 )
 
 var origins = []string{
-	"https://pmb.ulbi.ac.id",
-	"https://auth.ulbi.ac.id",
+	"https://www.datapedia.web.id",
+	"https://datapedia.web.id",
 	"https://sip.ulbi.ac.id",
 	"https://euis.ulbi.ac.id",
 	"https://home.ulbi.ac.id",
