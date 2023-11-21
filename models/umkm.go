@@ -55,21 +55,21 @@ type KarakteristikPerusahaan struct {
 }
 
 type IdentitasPengusaha struct {
-	IDSiKUMKM          interface{} `json:"id_si_kumkm" bson:"id_si_kumkm"`
-	NamaLengkap        string      `json:"nama_lengkap" bson:"nama_lengkap"`
-	NamaKomersil       string      `json:"nama_komersil" bson:"nama_komersil"`
-	AlamatIDProv       int         `json:"alamat_id_prov" bson:"alamat_id_prov"`
-	AlamatIDKabKot     int         `json:"alamat_id_kabkot" bson:"alamat_id_kabkot"`
-	AlamatIDKec        int         `json:"alamat_id_kec" bson:"alamat_id_kec"`
-	AlamatIDDesaKel    int         `json:"alamat_id_desa_kel" bson:"alamat_id_desa_kel"`
-	AlamatProvinsi     string      `json:"alamat_provinsi" bson:"alamat_provinsi"`
-	AlamatKabKot       interface{} `json:"alamat_kabkot" bson:"alamat_kabkot"`
-	AlamatKec          string      `json:"alamat_kec" bson:"alamat_kec"`
-	AlamatKel          string      `json:"alamat_kel" bson:"alamat_kel"`
-	IDJenisTempatUsaha int         `json:"id_jenis_tempat_usaha" bson:"id_jenis_tempat_usaha"`
-	JenisTempatUsaha   string      `json:"jenis_tempat_usaha" bson:"jenis_tempat_usaha"`
-	JenisKelamin       string      `json:"jenis_kelamin" bson:"jenis_kelamin"`
-	Umur               int         `json:"umur" bson:"umur"`
+	IDSiKUMKM          int    `json:"id_si_kumkm" bson:"id_si_kumkm"`
+	NamaLengkap        string `json:"nama_lengkap" bson:"nama_lengkap"`
+	NamaKomersil       string `json:"nama_komersil" bson:"nama_komersil"`
+	AlamatIDProv       int    `json:"alamat_id_prov" bson:"alamat_id_prov"`
+	AlamatIDKabKot     int    `json:"alamat_id_kabkot" bson:"alamat_id_kabkot"`
+	AlamatIDKec        int    `json:"alamat_id_kec" bson:"alamat_id_kec"`
+	AlamatIDDesaKel    int    `json:"alamat_id_desa_kel" bson:"alamat_id_desa_kel"`
+	AlamatProvinsi     string `json:"alamat_provinsi" bson:"alamat_provinsi"`
+	AlamatKabKot       int    `json:"alamat_kabkot" bson:"alamat_kabkot"`
+	AlamatKec          string `json:"alamat_kec" bson:"alamat_kec"`
+	AlamatKel          string `json:"alamat_kel" bson:"alamat_kel"`
+	IDJenisTempatUsaha int    `json:"id_jenis_tempat_usaha" bson:"id_jenis_tempat_usaha"`
+	JenisTempatUsaha   string `json:"jenis_tempat_usaha" bson:"jenis_tempat_usaha"`
+	JenisKelamin       string `json:"jenis_kelamin" bson:"jenis_kelamin"`
+	Umur               int    `json:"umur" bson:"umur"`
 }
 
 type Izin struct {
@@ -248,7 +248,7 @@ type PenyelenggaraanModal struct {
 }
 
 type DataBadanUsaha struct {
-	IDSiKUMKM            interface{}                `json:"id_si_kumkm" bson:"id_si_kumkm"`
+	IDSiKUMKM            int                        `json:"id_si_kumkm" bson:"id_si_kumkm"`
 	IDDataBadanUsaha     int                        `json:"id_data_badan_usaha" bson:"id_data_badan_usaha"`
 	NamaLengkap          string                     `json:"nama_lengkap" bson:"nama_lengkap"`
 	NamaKomersil         string                     `json:"nama_komersil" bson:"nama_komersil"`
@@ -257,7 +257,7 @@ type DataBadanUsaha struct {
 	AlamatIDKec          int                        `json:"alamat_id_kec" bson:"alamat_id_kec"`
 	AlamatIDDesaKel      int                        `json:"alamat_id_desa_kel" bson:"alamat_id_desa_kel"`
 	AlamatProvinsi       string                     `json:"alamat_provinsi" bson:"alamat_provinsi"`
-	AlamatKabKot         interface{}                `json:"alamat_kabkot" bson:"alamat_kabkot"`
+	AlamatKabKot         string                     `json:"alamat_kabkot" bson:"alamat_kabkot"`
 	AlamatKec            string                     `json:"alamat_kec" bson:"alamat_kec"`
 	AlamatKel            string                     `json:"alamat_kel" bson:"alamat_kel"`
 	IDJenisTempatUsaha   int                        `json:"id_jenis_tempat_usaha" bson:"id_jenis_tempat_usaha"`
