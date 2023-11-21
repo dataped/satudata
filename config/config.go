@@ -6,6 +6,6 @@ var Iteung = fiber.Config{
 	Prefork:       true,
 	CaseSensitive: true,
 	StrictRouting: true,
-	ServerHeader:  "Iteung",
-	AppName:       "Message Router",
+	ServerHeader:  "Satu Data Pedia",
+	AppName:       "Satu Data Pedia",
 }
