@@ -3,12 +3,12 @@ package main
 import (
 	"log"
 
-	"gocroot/config"
+	"github.com/dataped/satudata/config"
 
 	"github.com/aiteung/musik"
 	"github.com/gofiber/fiber/v2/middleware/cors"
 
-	"gocroot/url"
+	"github.com/dataped/satudata/url"
 
 	"github.com/gofiber/fiber/v2"
 )

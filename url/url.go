@@ -1,7 +1,7 @@
 package url
 
 import (
-	"gocroot/controller"
+	"github.com/dataped/satudata/controller"
 
 	"github.com/gofiber/fiber/v2"
 )
