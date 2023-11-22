@@ -18,12 +18,18 @@ func GenerateToken(c *fiber.Ctx) error {
 	if err != nil {
 		return err
 	}
-	respuser := models.User{
-		Name:         "admin",
-		Email:        "admin@admin.com",
-		Role:         "admin",
-		AccessToken:  userreq.Password,
-		RefreshToken: userreq.Password,
+	var respuser models.User
+	payload, err := watoken.Decode(config.PublicKey, userreq.Password)
+	if err != nil {
+		return err
+	} else {
+		respuser = models.User{
+			Name:         payload.Id,
+			Email:        "admin@admin.com",
+			Role:         "admin",
+			AccessToken:  userreq.Password,
+			RefreshToken: userreq.Password,
+		}
 	}
 	return c.JSON(respuser)
 
