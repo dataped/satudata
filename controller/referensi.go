@@ -17,12 +17,12 @@ func RefProvinsi(c *fiber.Ctx) error {
 		return err
 	}
 	res1 := strings.Split(h.Authorization, " ")
-	payload, err := watoken.Decode(config.PublicKey, res1[1])
+	paseto, err := watoken.Decode(config.PublicKey, res1[1])
 	var provinsi models.Provinsi
 	if err != nil {
 		return err
 	} else {
-		provinsi.NamaProvinsi = queryValue + payload.Id
+		provinsi.NamaProvinsi = queryValue + paseto.Id
 
 	}
 
