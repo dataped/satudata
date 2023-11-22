@@ -6,16 +6,16 @@ type Provinsi struct {
 	ID           int    `json:"id" bson :"id"`
 	NoProvinsi   int    `json:"no_provinsi" bson :"no_provinsi"`
 	NamaProvinsi string `json:"nama_provinsi" bson :"nama_provinsi"`
-	CreatedAt    time.Time
-	UpdatedAt    time.Time
+	CreatedAt    time.Time `json:"created_at bson:"created_at"`
+	UpdatedAt    time.Time `json: updated_at bson:"updated_at"`
 }
 type Kabupaten struct {
 	ID            int    `json:"id" bson:"id"`
 	NoKabupaten   int    `json:"no_kabupaten" bson:"no_kabupaten"`
 	NamaKabupaten string `json:"nama_kabupaten" bson:"nama_kabupaten"`
 	ProvinsiID    int    `json:"provinsi_id" bson:"provinsi_id"`
-	CreatedAt     time.Time
-	UpdatedAt     time.Time
+	CreatedAt     time.Time `json:"created_at bson:"created_at"`
+	UpdatedAt     time.Time `json: updated_at bson:"updated_at"`
 }
 
 type Kecamatan struct {
@@ -24,8 +24,8 @@ type Kecamatan struct {
 	NamaKecamatan string `json:"nama_kecamatan" bson:"nama_kecamatan"`
 	ProvinsiID    int    `json:"provinsi_id" bson:"provinsi_id"`
 	KabupatenID   int    `json:"kabupaten_id" bson:"kabupaten_id"`
-	CreatedAt     time.Time
-	UpdatedAt     time.Time
+	CreatedAt     time.Time `json:"created_at bson:"created_at"`
+	UpdatedAt     time.Time `json: updated_at bson:"updated_at"`
 }
 
 type Kelurahan struct {
@@ -35,6 +35,6 @@ type Kelurahan struct {
 	ProvinsiID    int    `json:"provinsi_id" bson:"provinsi_id"`
 	KabupatenID   int    `json:"kabupaten_id" bson:"kabupaten_id"`
 	KecamatanID   int    `json:"kecamatan_id" bson:"kecamatan_id"`
-	CreatedAt     time.Time
-	UpdatedAt     time.Time
+	CreatedAt     time.Time `json:"created_at bson:"created_at"`
+	UpdatedAt     time.Time `json: updated_at bson:"updated_at"`
 }
