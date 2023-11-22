@@ -25,7 +25,7 @@ var headers = []string{
 	"Accept",
 	"Authorization",
 	"Access-Control-Request-Headers",
-	"Token",
+	"accessToken",
 	"Login",
 	"Access-Control-Allow-Origin",
 	"Bearer",

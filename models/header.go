@@ -1,5 +1,6 @@
 package models
 
 type Header struct {
-	Token string `reqHeader:"token"`
+	AccessToken   string `reqHeader:"accessToken,omitempty"`
+	Authorization string `reqHeader:"Authorization,omitempty"`
 }
