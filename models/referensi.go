@@ -3,9 +3,9 @@ package models
 import "time"
 
 type Provinsi struct {
-	ID           int    `json:"id" bson :"id"`
-	NoProvinsi   int    `json:"no_provinsi" bson :"no_provinsi"`
-	NamaProvinsi string `json:"nama_provinsi" bson :"nama_provinsi"`
+	ID           int    `json:"id" bson:"id"`
+	NoProvinsi   int    `json:"no_provinsi" bson:"no_provinsi"`
+	NamaProvinsi string `json:"nama_provinsi" bson:"nama_provinsi"`
 	CreatedAt    time.Time
 	UpdatedAt    time.Time
 }
