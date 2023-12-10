@@ -8,7 +8,7 @@ RUN apk add \
   tesseract-ocr-dev
 RUN apk add tesseract-ocr-data-eng
 
-ENV GOPATH=/go
+#ENV GOPATH=/go
 
 WORKDIR $GOPATH/src/satudata
 COPY go.mod ./
