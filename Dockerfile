@@ -17,7 +17,7 @@ RUN mkdir -p $GOPATH/src/satudata
 RUN apk add build-base
 COPY . $GOPATH/src/satudata
 
-ENV GOSSERACT_CPPSTDERR_NOT_CAPTURED=1
+#ENV GOSSERACT_CPPSTDERR_NOT_CAPTURED=1
 
 RUN go build -o satudata .
 EXPOSE 8080
