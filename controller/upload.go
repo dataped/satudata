@@ -27,9 +27,9 @@ func UploadFile(ctx *fiber.Ctx) error {
 	client := gosseract.NewClient()
 	defer client.Close()
 	filename := fmt.Sprintf("%s/%s", config.UploadDir, fname)
-	client.SetImage(filename)
-	text, _ := client.Text()
+	err = client.SetImage(filename)
+	text, err := client.Text()
 
-	return ctx.Status(fiber.StatusOK).JSON(fiber.Map{"filename": filename, "content": text})
+	return ctx.Status(fiber.StatusOK).JSON(fiber.Map{"filename": filename, "content": text, "error": err.Error()})
 
 }
