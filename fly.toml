@@ -7,16 +7,9 @@ app = "satudata"
 primary_region = "sin"
 
 [build]
-  builder = "paketobuildpacks/builder:base"
-  buildpacks = ["gcr.io/paketo-buildpacks/go"]
-  [[build.steps]]
-    name = "Install Tesseract"
-    script = '''
-      apt-get -qy update
-      apt-get install -qy libleptonica-dev libtesseract-dev
-      apt-get install -qy libtool m4 automake cmake pkg-config
-      apt-get install -qy libicu-dev libpango1.0-dev libcairo-dev tesseract-ocr-eng
-    '''
+  #builder = "paketobuildpacks/builder:base"
+  #buildpacks = ["gcr.io/paketo-buildpacks/go"]
+  dockerfile = "Dockerfile"
 
 [env]
   PORT = "8080"
