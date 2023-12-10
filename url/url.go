@@ -8,4 +8,8 @@ import (
 
 func Web(page *fiber.App) {
 	page.Get("/", controller.Homepage)
+
+	page.Post("/token", controller.GenerateToken)
+
+	page.Get("/ref/provinsi", controller.RefProvinsi)
 }

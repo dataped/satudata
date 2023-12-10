@@ -1,17 +1,48 @@
 package models
 
 type TenagaKerja struct {
-	NamaUsaha          string `json:"nama_usaha" bson:"nama_usaha"`
-	Provinsi           string `json:"provinsi" bson:"provinsi"`
-	Kabupaten          string `json:"kabupaten" bson:"kabupaten"`
-	Kecamatan          string `json:"kecamatan" bson:"kecamatan"`
-	Desa               string `json:"desa" bson:"desa"`
-	JenisTempatUsaha   string `json:"jenis_tempat_usaha" bson:"jenis_tempat_usaha"`
-	TkLaki             int    `json:"tk_laki" bson:"tk_laki"`
+	IDSiKumkm                   int                     `json:"id_si_kumkm" bson:"id_si_kumkm"`
+	NamaLengkap                 string                  `json:"nama_lengkap" bson:"nama_lengkap"`
+	NamaKomersil                string                  `json:"nama_komersil" bson:"nama_komersil"`
+	AlamatIDProv                int                     `json:"alamat_id_prov" bson:"alamat_id_prov"`
+	AlamatIDKabkot              int                     `json:"alamat_id_kabkot" bson:"alamat_id_kabkot"`
+	AlamatIDKec                 int                     `json:"alamat_id_kec" bson:"alamat_id_kec"`
+	AlamatIDDesaKel             int                     `json:"alamat_id_desa_kel" bson:"alamat_id_desa_kel"`
+	AlamatProvinsi              string                  `json:"alamat_provinsi" bson:"alamat_provinsi"`
+	AlamatKabkot                string                  `json:"alamat_kabkot" bson:"alamat_kabkot"`
+	AlamatKec                   string                  `json:"alamat_kec" bson:"alamat_kec"`
+	AlamatKel                   string                  `json:"alamat_kel" bson:"alamat_kel"`
+	IDJenisTempatUsaha          int                     `json:"id_jenis_tempat_usaha" bson:"id_jenis_tempat_usaha"`
+	JenisTempatUsaha            string                  `json:"jenis_tempat_usaha" bson:"jenis_tempat_usaha"`
+	TkDibayarLaki               int                     `json:"tk_dibayar_laki" bson:"tk_dibayar_laki"`
+	TkDibayarPerempuan          int                     `json:"tk_dibayar_perempuan" bson:"tk_dibayar_perempuan"`
+	TkDibayarDisabilLaki        int                     `json:"tk_dibayar_disabil_laki" bson:"tk_dibayar_disabil_laki"`
+	TkDibayarDisabilPerempuan   int                     `json:"tk_dibayar_disabil_perempuan" bson:"tk_dibayar_disabil_perempuan"`
+	TkNotDibayarLaki            int                     `json:"tk_not_dibayar_laki" bson:"tk_not_dibayar_laki"`
+	TkNotDibayarPerempuan       int                     `json:"tk_not_dibayar_perempuan" bson:"tk_not_dibayar_perempuan"`
+	TkNotDibayarDisabilLaki     int                     `json:"tk_not_dibayar_disabil_laki" bson:"tk_not_dibayar_disabil_laki"`
+	TkNotDibayarDisabilPerempua int                     `json:"tk_not_dibayar_disabil_perempua" bson:"tk_not_dibayar_disabil_perempua"`
+	UpahGajiLaki                int                     `json:"upah_gaji_laki" bson:"upah_gaji_laki"`
+	UpahGajiPerempuan           int                     `json:"upah_gaji_perempuan" bson:"upah_gaji_perempuan"`
+	UpahGajiDisabilLaki         int                     `json:"upah_gaji_disabil_laki" bson:"upah_gaji_disabil_laki"`
+	UpahGajiDisabilPerempuan    int                     `json:"upah_gaji_disabil_perempuan" bson:"upah_gaji_disabil_perempuan"`
+	InsentifLaki                int                     `json:"insentif_laki" bson:"insentif_laki"`
+	InsentifiPerempuan          int                     `json:"insentifi_perempuan" bson:"insentifi_perempuan"`
+	InsentifiDisabilLaki        int                     `json:"insentifi_disabil_laki" bson:"insentifi_disabil_laki"`
+	InsentifDisabilPerempuan    int                     `json:"insentif_disabil_perempuan" bson:"insentif_disabil_perempuan"`
+	JmlBulanKerja               int                     `json:"jml_bulan_kerja" bson:"jml_bulan_kerja"`
+	RataHariKerjaPerBulan       int                     `json:"rata_hari_kerja_per_bulan" bson:"rata_hari_kerja_per_bulan"`
+	RataJamKerjaPerHari         int                     `json:"rata_jam_kerja_per_hari" bson:"rata_jam_kerja_per_hari"`
+	TenagaKerjaPendididikan     []TenagaKerjaPendidikan `json:"tenaga_kerja_pendididikan" bson:"tenaga_kerja_pendididikan"`
+}
+
+type TenagaKerjaPendidikan struct {
+	IDPendidikanFormal int    `json:"id_pendidikan_formal" bson:"id_pendidikan_formal"`
+	PendidikanFormal   string `json:"pendidikan_formal" bson:"pendidikan_formal"`
+	TkDibayarLaki      int    `json:"tk_dibayar_laki" bson:"tk_dibayar_laki"`
 	TkPerempuan        int    `json:"tk_perempuan" bson:"tk_perempuan"`
 	TkDisabilLaki      int    `json:"tk_disabil_laki" bson:"tk_disabil_laki"`
 	TkDisabilPerempuan int    `json:"tk_disabil_perempuan" bson:"tk_disabil_perempuan"`
-	PendidikanTk       string `json:"pendidikan_tk" bson:"pendidikan_tk"`
 }
 
 type TempatUsaha struct {
