@@ -6,6 +6,7 @@ RUN apk add \
   git \
   musl-dev \
   tesseract-ocr-dev
+RUN apk add tesseract-ocr-data-eng
 
 WORKDIR $GOPATH/src/satudata
 COPY go.mod ./
@@ -13,6 +14,8 @@ RUN mkdir -p $GOPATH/src/satudata
 
 RUN apk add build-base
 COPY . $GOPATH/src/satudata
+
+ENV GOSSERACT_CPPSTDERR_NOT_CAPTURED=1
 
 RUN go build -o satudata .
 EXPOSE 8080
