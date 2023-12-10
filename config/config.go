@@ -9,3 +9,5 @@ var Iteung = fiber.Config{
 	ServerHeader:  "Satu Data Pedia",
 	AppName:       "Satu Data Pedia",
 }
+
+const UploadDir = "./uploads"
