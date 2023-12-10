@@ -28,6 +28,9 @@ func UploadFile(ctx *fiber.Ctx) error {
 	defer client.Close()
 	filename := fmt.Sprintf("%s/%s", config.UploadDir, fname)
 	err = client.SetImage(filename)
+	if err != nil {
+		return ctx.Status(fiber.StatusInternalServerError).JSON(fiber.Map{"error": err.Error()})
+	}
 	text, err := client.Text()
 
 	return ctx.Status(fiber.StatusOK).JSON(fiber.Map{"filename": filename, "content": text, "error": err.Error()})
