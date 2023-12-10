@@ -3,6 +3,7 @@ package main
 import (
 	"log"
 
+	"github.com/dataped/mapdf"
 	"github.com/dataped/satudata/config"
 
 	"github.com/aiteung/musik"
@@ -14,6 +15,7 @@ import (
 )
 
 func main() {
+	mapdf.CreateFolder(config.UploadDir)
 	site := fiber.New(config.Iteung)
 	site.Use(cors.New(config.Cors))
 	url.Web(site)
