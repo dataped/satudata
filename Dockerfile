@@ -1,42 +1,23 @@
-#####
-# This is a working example of setting up tesseract/gosseract,
-# and also works as an example runtime to use gosseract package.
-# You can just hit `docker run -it --rm otiai10/gosseract`
-# to try and check it out!
-#####
 FROM golang:latest
 #LABEL maintainer="Hiromu Ochiai <otiai10@gmail.com>"
+RUN cat /etc/os-release
+# Output: Debian GNU/Linux 10 (buster)
+RUN apt-get -qy update
 
-RUN apt-get update -qq
+RUN apt-get install -qy libleptonica-dev libtesseract-dev
+RUN apt-get install -qy libtool m4 automake cmake pkg-config
+RUN apt-get install -qy libicu-dev libpango1.0-dev libcairo-dev
 
-# You need librariy files and headers of tesseract and leptonica.
-# When you miss these or LD_LIBRARY_PATH is not set to them,
-# you would face an error: "tesseract/baseapi.h: No such file or directory"
-RUN apt-get install -y -qq libtesseract-dev libleptonica-dev
+RUN cd /opt && git clone https://github.com/tesseract-ocr/tesseract
+WORKDIR /opt/tesseract
+RUN git reset --hard 5.3.3
+RUN ./autogen.sh &&\
+    ./configure --enable-debug LDFLAGS="-L/usr/local/lib" CFLAGS="-I/usr/local/include"
+RUN make -j 8
+RUN make install && ldconfig
+RUN tesseract --version
 
-# In case you face TESSDATA_PREFIX error, you minght need to set env vars
-# to specify the directory where "tessdata" is located.
-ENV TESSDATA_PREFIX=/usr/share/tesseract-ocr/5/tessdata/
-
-# Load languages.
-# These {lang}.traineddata would b located under ${TESSDATA_PREFIX}/tessdata.
-RUN apt-get install -y -qq \
-  tesseract-ocr-eng \
-  tesseract-ocr-deu \
-  tesseract-ocr-jpn
-# See https://github.com/tesseract-ocr/tessdata for the list of available languages.
-# If you want to download these traineddata via `wget`, don't forget to locate
-# downloaded traineddata under ${TESSDATA_PREFIX}/tessdata.
-
-# Setup your cool project with go.mod.
-#WORKDIR ${GOPATH}/src/github.com/ghost/cool-project
-#RUN go mod init
-
-# Let's have gosseract in your project and test it.
-#RUN go get -t github.com/otiai10/gosseract/v2
-
-# Now, you've got complete environment to play with "gosseract"!
-# For other OS, check https://github.com/otiai10/gosseract/tree/main/test/runtimes
-
-# Try `docker run -it --rm otiai10/gosseract` to test this environment.
-#CMD go test -v github.com/otiai10/gosseract/v2
+ENV TESSDATA_PREFIX=/usr/local/share/tessdata
+ENV TESSDATA_REPO=https://github.com/tesseract-ocr/tessdata_best
+WORKDIR ${TESSDATA_PREFIX}
+RUN wget -q ${TESSDATA_REPO}/raw/4.1.0/eng.traineddata
